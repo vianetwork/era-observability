@@ -24,17 +24,32 @@ scrape_configs:
     static_configs:
       - targets: ['pushgateway:9091']
   
-  - job_name: 'zksync'
+  - job_name: 'Via'
     scrape_interval: 5s
     honor_labels: true
     static_configs:
       - targets: ['host.docker.internal:3312']
+    metrics_path: '/'
 
-  - job_name: 'zksync_contract_verifier'
+  - job_name: 'Coordinator'
+    scrape_interval: 5s
+    honor_labels: true
+    static_configs:
+      - targets: ['host.docker.internal:3316']
+    metrics_path: '/'
+
+  - job_name: 'Verifier'
     scrape_interval: 5s
     honor_labels: true
     static_configs:
       - targets: ['host.docker.internal:3314']
+    metrics_path: '/'
+
+  # - job_name: 'zksync_contract_verifier'
+  #   scrape_interval: 5s
+  #   honor_labels: true
+  #   static_configs:
+  #     - targets: ['host.docker.internal:3314']
 
   - job_name: 'zksync_prover'
     scrape_interval: 5s

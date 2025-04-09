@@ -186,7 +186,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "L1 batch number per stage - from being `sealed` in `state_keeper` to `l1_mined_ExecuteBlocks` in `eth_sender`. Delay in proof l1 operation is commonly observed when there are issues with provers, while a delay in commit operation is indicative of problems with `eth_sender`",
+      "description": "L1 batch number per stage - from being `sealed` in `state_keeper` to `l1_mined_ExecuteBlocks` in `btc_sender`. Delay in proof l1 operation is commonly observed when there are issues with provers, while a delay in commit operation is indicative of problems with `btc_sender`",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -766,140 +766,6 @@
         }
       ],
       "title": "Priority transactions TPS",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 6,
-        "y": 18
-      },
-      "id": 11027,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "avg(server_gas_adjuster_current_base_fee_per_gas{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"} != 0)",
-          "hide": false,
-          "legendFormat": "Current L1 base fee",
-          "range": true,
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "avg(server_gas_adjuster_median_base_fee_per_gas{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"} != 0)",
-          "hide": false,
-          "legendFormat": "Median L1 base fee",
-          "range": true,
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "avg(sum(rate(server_eth_sender_used_base_fee_per_gas_sum{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"}[$__rate_interval]))/sum(rate(server_eth_sender_used_base_fee_per_gas_count{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"}[$__rate_interval])))",
-          "interval": "",
-          "legendFormat": "Last used base fee",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "avg(server_gas_adjuster_median_blob_base_fee_per_gas{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"} != 0)",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Median L1 blob base fee",
-          "range": true,
-          "refId": "D"
-        }
-      ],
-      "title": "L1 Gas price",
       "type": "timeseries"
     },
     {
