@@ -40,11 +40,10 @@
       }
     ]
   },
-  "description": "",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 438,
+  "id": 27,
   "links": [
     {
       "asDropdown": false,
@@ -75,7 +74,6 @@
       "url": ""
     }
   ],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
@@ -130,6 +128,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -141,7 +140,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -186,7 +185,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "L1 batch number per stage - from being `sealed` in `state_keeper` to `l1_mined_ExecuteBlocks` in `eth_sender`. Delay in proof l1 operation is commonly observed when there are issues with provers, while a delay in commit operation is indicative of problems with `eth_sender`",
+      "description": "L1 batch number per stage - from being `sealed` in `state_keeper` to `l1_mined_ExecuteBlocks` in `btc_sender`. Delay in proof l1 operation is commonly observed when there are issues with provers, while a delay in commit operation is indicative of problems with `btc_sender`",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -199,6 +198,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -257,7 +257,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.1.1",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -298,10 +298,6 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -373,7 +369,7 @@
           }
         ]
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -454,6 +450,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -515,6 +512,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -561,6 +559,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -631,6 +630,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -667,6 +667,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -730,6 +731,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -769,246 +771,6 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 6,
-        "y": 18
-      },
-      "id": 11027,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "avg(server_gas_adjuster_current_base_fee_per_gas{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"} != 0)",
-          "hide": false,
-          "legendFormat": "Current L1 base fee",
-          "range": true,
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "avg(server_gas_adjuster_median_base_fee_per_gas{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"} != 0)",
-          "hide": false,
-          "legendFormat": "Median L1 base fee",
-          "range": true,
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "avg(sum(rate(server_eth_sender_used_base_fee_per_gas_sum{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"}[$__rate_interval]))/sum(rate(server_eth_sender_used_base_fee_per_gas_count{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"}[$__rate_interval])))",
-          "interval": "",
-          "legendFormat": "Last used base fee",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "avg(server_gas_adjuster_median_blob_base_fee_per_gas{pod=~\"server-v2-eth-sender.*\", namespace=~\"$namespace|\"} != 0)",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Median L1 blob base fee",
-          "range": true,
-          "refId": "D"
-        }
-      ],
-      "title": "L1 Gas price",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 18
-      },
-      "id": 11023,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "max (eth_balance{service=\"ethexporter-l2\"}) by (name)",
-          "legendFormat": "L2-{{name}}",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "expr": "avg by (name) (eth_balance{namespace=~\"$namespace|\", service=\"ethexporter\"})",
-          "hide": false,
-          "legendFormat": "L1-{{name}} ",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "ETH Balances",
-      "type": "timeseries"
-    },
-    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
@@ -1039,6 +801,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1097,7 +860,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.1.1",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -1154,6 +917,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1212,7 +976,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.1.1",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -1287,9 +1051,9 @@
       "type": "timeseries"
     }
   ],
+  "preload": false,
   "refresh": "1m",
-  "revision": 1,
-  "schemaVersion": 39,
+  "schemaVersion": 40,
   "tags": [
     "Era-Main"
   ],
@@ -1297,36 +1061,28 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "vm-mainnet2",
-          "value": "vm-mainnet2"
+          "text": "Prometheus",
+          "value": "prometheus"
         },
-        "hide": 0,
         "includeAll": false,
-        "multi": false,
         "name": "datasource",
         "options": [],
         "query": "prometheus",
-        "queryValue": "",
         "refresh": 1,
         "regex": "^(?!prometheus-1$|prometheus$|vm-mainnet$|vm-gpu-sandbox$|vm-testnets$|vm-infra$|vm-infra-staging$|default$).*",
-        "skipUrlSync": false,
         "type": "datasource"
       },
       {
         "current": {
-          "selected": false,
-          "text": "mainnet2",
-          "value": "mainnet2"
+          "text": "via",
+          "value": "via"
         },
         "datasource": {
           "type": "prometheus",
           "uid": "${datasource}"
         },
         "definition": "label_values(server_processed_txs{stage=~\"state_keeper\"}, namespace)",
-        "hide": 0,
         "includeAll": false,
-        "multi": false,
         "name": "namespace",
         "options": [],
         "query": {
@@ -1335,8 +1091,6 @@
         },
         "refresh": 2,
         "regex": "^(?!snapshot_recovery_test$).*",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       }
     ]
@@ -1349,6 +1103,6 @@
   "timezone": "",
   "title": "Era - general",
   "uid": "0Y8DUff4k",
-  "version": 105,
+  "version": 1,
   "weekStart": ""
 }
