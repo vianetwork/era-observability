@@ -25,7 +25,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 28,
+  "id": 29,
   "links": [],
   "panels": [
     {
@@ -1274,44 +1274,10 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Errors occurred during the submission of inscriptions to the BTC node.",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -1320,10 +1286,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 1
               }
             ]
           }
@@ -1332,23 +1294,27 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 6,
         "x": 12,
         "y": 43
       },
-      "id": 11,
+      "id": 12,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "maxHeight": 600,
-          "mode": "single",
-          "sort": "none"
-        }
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
       "pluginVersion": "11.3.0",
       "targets": [
@@ -1358,13 +1324,31 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "via_btc_sender_l1_transient_errors",
-          "range": true,
+          "exemplar": false,
+          "expr": "via_btc_sender_last_known_l1_block{block_number_variant=\"latest\"}",
+          "format": "heatmap",
+          "instant": true,
+          "legendFormat": "Sealed",
+          "range": false,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "via_btc_sender_last_known_l1_block{block_number_variant=\"finalized\"}",
+          "format": "heatmap",
+          "instant": true,
+          "legendFormat": "Finalized",
+          "range": false,
+          "refId": "C"
         }
       ],
-      "title": "L1 Transient Errors",
-      "type": "timeseries"
+      "title": "Last Known L1 Blocks",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -1397,8 +1381,8 @@
       "gridPos": {
         "h": 8,
         "w": 6,
-        "x": 0,
-        "y": 51
+        "x": 18,
+        "y": 43
       },
       "id": 9,
       "options": {
@@ -1451,87 +1435,6 @@
         }
       ],
       "title": "Inscriptions In progress",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 6,
-        "y": 51
-      },
-      "id": 12,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.3.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "via_btc_sender_last_known_l1_block{block_number_variant=\"latest\"}",
-          "format": "heatmap",
-          "instant": true,
-          "legendFormat": "Sealed",
-          "range": false,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "via_btc_sender_last_known_l1_block{block_number_variant=\"finalized\"}",
-          "format": "heatmap",
-          "instant": true,
-          "legendFormat": "Finalized",
-          "range": false,
-          "refId": "C"
-        }
-      ],
-      "title": "Last Known L1 Blocks",
       "type": "stat"
     }
   ],

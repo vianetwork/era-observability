@@ -18,7 +18,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 40,
+    "id": 26,
     "links": [],
     "panels": [
         {
@@ -1275,7 +1275,7 @@
         }
     ],
     "preload": false,
-    "refresh": "",
+    "refresh": "1m",
     "schemaVersion": 40,
     "tags": [
         "btc",
@@ -1299,8 +1299,8 @@
         ]
     },
     "time": {
-        "from": "2025-04-08T23:25:29.515Z",
-        "to": "2025-04-10T07:25:29.515Z"
+        "from": "now-1h",
+        "to": "now"
     },
     "timepicker": {},
     "timezone": "",
