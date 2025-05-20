@@ -44,7 +44,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 3,
+  "id": 27,
   "links": [
     {
       "asDropdown": false,
@@ -75,7 +75,6 @@
       "url": ""
     }
   ],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
@@ -108,6 +107,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -150,7 +150,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "s"
         },
         "overrides": [
           {
@@ -199,6 +200,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -268,6 +270,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -331,6 +334,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -348,15 +352,6 @@
       "type": "timeseries"
     },
     {
-      "cards": {},
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateOranges",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "tsbuckets",
       "datasource": {
         "type": "prometheus",
         "uid": "${datasource}"
@@ -383,13 +378,7 @@
         "x": 18,
         "y": 1
       },
-      "heatmap": {},
-      "hideZeroBuckets": true,
-      "highlightCards": true,
       "id": 11558,
-      "legend": {
-        "show": true
-      },
       "options": {
         "calculate": false,
         "calculation": {},
@@ -429,8 +418,7 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "11.0.0",
-      "reverseYBuckets": false,
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -469,20 +457,7 @@
         }
       ],
       "title": "Waiting for Transaction",
-      "tooltip": {
-        "show": true,
-        "showHistogram": false
-      },
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "yAxis": {
-        "format": "s",
-        "logBase": 1,
-        "show": true
-      },
-      "yBucketBound": "auto"
+      "type": "heatmap"
     },
     {
       "datasource": {
@@ -502,6 +477,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -569,7 +545,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -767,6 +743,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -855,7 +832,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -913,6 +890,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -976,7 +954,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -1018,15 +996,6 @@
       "type": "timeseries"
     },
     {
-      "cards": {},
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateOranges",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "tsbuckets",
       "datasource": {
         "type": "prometheus",
         "uid": "${datasource}"
@@ -1053,13 +1022,7 @@
         "x": 0,
         "y": 17
       },
-      "heatmap": {},
-      "hideZeroBuckets": true,
-      "highlightCards": true,
       "id": 13625,
-      "legend": {
-        "show": true
-      },
       "options": {
         "calculate": false,
         "calculation": {},
@@ -1099,8 +1062,7 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "11.0.0",
-      "reverseYBuckets": false,
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -1139,20 +1101,7 @@
         }
       ],
       "title": "Tx Inclusion wait time",
-      "tooltip": {
-        "show": true,
-        "showHistogram": false
-      },
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "yAxis": {
-        "format": "s",
-        "logBase": 1,
-        "show": true
-      },
-      "yBucketBound": "auto"
+      "type": "heatmap"
     },
     {
       "datasource": {
@@ -1172,6 +1121,7 @@
             "axisLabel": "seconds",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1260,6 +1210,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -1314,15 +1265,6 @@
       "type": "timeseries"
     },
     {
-      "cards": {},
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateOranges",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "tsbuckets",
       "datasource": {
         "type": "prometheus",
         "uid": "${datasource}"
@@ -1348,13 +1290,7 @@
         "x": 18,
         "y": 17
       },
-      "heatmap": {},
-      "hideZeroBuckets": true,
-      "highlightCards": true,
       "id": 1797,
-      "legend": {
-        "show": true
-      },
       "options": {
         "calculate": false,
         "calculation": {},
@@ -1394,8 +1330,7 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "11.0.0",
-      "reverseYBuckets": false,
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -1434,20 +1369,7 @@
         }
       ],
       "title": "Tx Execution Time",
-      "tooltip": {
-        "show": true,
-        "showHistogram": false
-      },
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "yAxis": {
-        "format": "s",
-        "logBase": 1,
-        "show": true
-      },
-      "yBucketBound": "auto"
+      "type": "heatmap"
     },
     {
       "datasource": {
@@ -1467,6 +1389,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1538,6 +1461,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -1597,6 +1521,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -1608,7 +1533,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -1636,7 +1561,6 @@
       "id": 13117,
       "panels": [],
       "repeat": "pod",
-      "repeatDirection": "h",
       "title": "Miniblock sealing - $pod",
       "type": "row"
     },
@@ -1658,6 +1582,7 @@
             "axisLabel": "seconds",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1688,8 +1613,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1721,6 +1645,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -1837,7 +1762,7 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -1874,6 +1799,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1904,8 +1830,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1936,7 +1861,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -1992,6 +1917,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2022,8 +1948,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2055,7 +1980,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -2111,6 +2036,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2143,8 +2069,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2176,6 +2101,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -2210,6 +2136,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2240,8 +2167,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2298,6 +2224,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -2356,6 +2283,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2386,8 +2314,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2419,7 +2346,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -2461,15 +2388,6 @@
       "type": "timeseries"
     },
     {
-      "cards": {},
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateOranges",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "tsbuckets",
       "datasource": {
         "type": "prometheus",
         "uid": "${datasource}"
@@ -2496,13 +2414,7 @@
         "x": 18,
         "y": 42
       },
-      "heatmap": {},
-      "hideZeroBuckets": true,
-      "highlightCards": true,
       "id": 2348,
-      "legend": {
-        "show": true
-      },
       "options": {
         "calculate": false,
         "calculation": {},
@@ -2542,8 +2454,7 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "11.0.0",
-      "reverseYBuckets": false,
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -2582,20 +2493,7 @@
         }
       ],
       "title": "Seal Miniblock DB Time",
-      "tooltip": {
-        "show": true,
-        "showHistogram": false
-      },
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "yAxis": {
-        "format": "s",
-        "logBase": 1,
-        "show": true
-      },
-      "yBucketBound": "auto"
+      "type": "heatmap"
     },
     {
       "datasource": {
@@ -2614,6 +2512,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2644,8 +2543,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2690,6 +2588,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -2878,6 +2777,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2908,8 +2808,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2941,7 +2840,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -3000,6 +2899,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3030,8 +2930,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3062,7 +2961,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -3118,6 +3017,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3148,8 +3048,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3206,7 +3105,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -3258,7 +3157,6 @@
       "id": 13300,
       "panels": [],
       "repeat": "pod",
-      "repeatDirection": "h",
       "title": "L1 batch sealing - $pod",
       "type": "row"
     },
@@ -3280,6 +3178,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3310,8 +3209,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3343,7 +3241,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -3412,6 +3310,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3442,8 +3341,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3479,7 +3377,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -3548,6 +3446,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "bars",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3578,8 +3477,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3610,7 +3508,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -3665,6 +3563,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3695,8 +3594,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3741,6 +3639,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -3929,6 +3828,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "points",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3959,8 +3859,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4017,7 +3916,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -4076,6 +3975,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "points",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -4106,8 +4006,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4139,7 +4038,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.4.7",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "alias": "",
@@ -4197,6 +4096,7 @@
             "axisLabel": "seconds",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -4283,6 +4183,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -4397,7 +4298,7 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -4603,15 +4504,6 @@
           "type": "timeseries"
         },
         {
-          "cards": {},
-          "color": {
-            "cardColor": "#b4ff00",
-            "colorScale": "sqrt",
-            "colorScheme": "interpolateOranges",
-            "exponent": 0.5,
-            "mode": "spectrum"
-          },
-          "dataFormat": "tsbuckets",
           "datasource": {
             "type": "prometheus",
             "uid": "${datasource}"
@@ -4637,13 +4529,7 @@
             "x": 12,
             "y": 92
           },
-          "heatmap": {},
-          "hideZeroBuckets": true,
-          "highlightCards": true,
           "id": 1804,
-          "legend": {
-            "show": true
-          },
           "options": {
             "calculate": false,
             "calculation": {},
@@ -4683,7 +4569,6 @@
             }
           },
           "pluginVersion": "10.4.2",
-          "reverseYBuckets": false,
           "targets": [
             {
               "alias": "",
@@ -4722,20 +4607,7 @@
             }
           ],
           "title": "Get Tx From Mempool",
-          "tooltip": {
-            "show": true,
-            "showHistogram": false
-          },
-          "type": "heatmap",
-          "xAxis": {
-            "show": true
-          },
-          "yAxis": {
-            "format": "s",
-            "logBase": 1,
-            "show": true
-          },
-          "yBucketBound": "auto"
+          "type": "heatmap"
         },
         {
           "datasource": {
@@ -4916,6 +4788,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -4977,6 +4850,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5045,6 +4919,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5079,6 +4954,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -5140,6 +5016,7 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5174,6 +5051,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -5235,6 +5113,7 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5269,6 +5148,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -5330,6 +5210,7 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5399,7 +5280,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5463,6 +5344,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -5524,6 +5406,7 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5558,6 +5441,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -5619,6 +5503,7 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -5653,6 +5538,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -5714,6 +5600,7 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.3.0",
       "targets": [
         {
           "datasource": {
@@ -6105,15 +5992,6 @@
           "type": "timeseries"
         },
         {
-          "cards": {},
-          "color": {
-            "cardColor": "#b4ff00",
-            "colorScale": "sqrt",
-            "colorScheme": "interpolateOranges",
-            "exponent": 0.5,
-            "mode": "spectrum"
-          },
-          "dataFormat": "tsbuckets",
           "datasource": {
             "type": "prometheus",
             "uid": "${datasource}"
@@ -6141,13 +6019,7 @@
             "x": 0,
             "y": 109
           },
-          "heatmap": {},
-          "hideZeroBuckets": true,
-          "highlightCards": true,
           "id": 2298,
-          "legend": {
-            "show": true
-          },
           "options": {
             "calculate": false,
             "calculation": {},
@@ -6189,7 +6061,6 @@
           "pluginVersion": "10.3.1",
           "repeat": "pod",
           "repeatDirection": "v",
-          "reverseYBuckets": false,
           "targets": [
             {
               "alias": "",
@@ -6228,31 +6099,9 @@
             }
           ],
           "title": "total time - heatmap - $pod",
-          "tooltip": {
-            "show": true,
-            "showHistogram": false
-          },
-          "type": "heatmap",
-          "xAxis": {
-            "show": true
-          },
-          "yAxis": {
-            "format": "s",
-            "logBase": 1,
-            "show": true
-          },
-          "yBucketBound": "auto"
+          "type": "heatmap"
         },
         {
-          "cards": {},
-          "color": {
-            "cardColor": "#b4ff00",
-            "colorScale": "sqrt",
-            "colorScheme": "interpolateOranges",
-            "exponent": 0.5,
-            "mode": "spectrum"
-          },
-          "dataFormat": "tsbuckets",
           "datasource": {
             "type": "prometheus",
             "uid": "${datasource}"
@@ -6280,13 +6129,7 @@
             "x": 8,
             "y": 109
           },
-          "heatmap": {},
-          "hideZeroBuckets": true,
-          "highlightCards": true,
           "id": 12278,
-          "legend": {
-            "show": true
-          },
           "options": {
             "calculate": false,
             "calculation": {},
@@ -6328,7 +6171,6 @@
           "pluginVersion": "10.3.1",
           "repeat": "pod",
           "repeatDirection": "v",
-          "reverseYBuckets": false,
           "targets": [
             {
               "alias": "",
@@ -6367,31 +6209,9 @@
             }
           ],
           "title": "per entity/row - heatmap - $pod",
-          "tooltip": {
-            "show": true,
-            "showHistogram": false
-          },
-          "type": "heatmap",
-          "xAxis": {
-            "show": true
-          },
-          "yAxis": {
-            "format": "s",
-            "logBase": 1,
-            "show": true
-          },
-          "yBucketBound": "auto"
+          "type": "heatmap"
         },
         {
-          "cards": {},
-          "color": {
-            "cardColor": "#b4ff00",
-            "colorScale": "sqrt",
-            "colorScheme": "interpolateOranges",
-            "exponent": 0.5,
-            "mode": "spectrum"
-          },
-          "dataFormat": "tsbuckets",
           "datasource": {
             "type": "prometheus",
             "uid": "${datasource}"
@@ -6419,13 +6239,7 @@
             "x": 16,
             "y": 109
           },
-          "heatmap": {},
-          "hideZeroBuckets": true,
-          "highlightCards": true,
           "id": 12393,
-          "legend": {
-            "show": true
-          },
           "options": {
             "calculate": false,
             "calculation": {},
@@ -6467,7 +6281,6 @@
           "pluginVersion": "10.3.1",
           "repeat": "pod",
           "repeatDirection": "v",
-          "reverseYBuckets": false,
           "targets": [
             {
               "alias": "",
@@ -6506,24 +6319,10 @@
             }
           ],
           "title": "number of entities - heatmap - $pod",
-          "tooltip": {
-            "show": true,
-            "showHistogram": false
-          },
-          "type": "heatmap",
-          "xAxis": {
-            "show": true
-          },
-          "yAxis": {
-            "format": "s",
-            "logBase": 1,
-            "show": true
-          },
-          "yBucketBound": "auto"
+          "type": "heatmap"
         }
       ],
       "repeat": "state_keeper_seal_miniblock_stages",
-      "repeatDirection": "h",
       "title": "Miniblock seal stage $state_keeper_seal_miniblock_stages",
       "type": "row"
     },
@@ -6533,7 +6332,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 130
+        "y": 129
       },
       "id": 11724,
       "panels": [
@@ -6601,7 +6400,7 @@
             "h": 8,
             "w": 6,
             "x": 0,
-            "y": 106
+            "y": 452
           },
           "id": 10728,
           "options": {
@@ -6721,7 +6520,7 @@
             "h": 8,
             "w": 6,
             "x": 6,
-            "y": 106
+            "y": 452
           },
           "id": 11897,
           "options": {
@@ -6841,7 +6640,7 @@
             "h": 8,
             "w": 6,
             "x": 12,
-            "y": 106
+            "y": 452
           },
           "id": 11869,
           "options": {
@@ -6899,7 +6698,6 @@
         }
       ],
       "repeat": "state_keeper_seal_l1_batch_stages",
-      "repeatDirection": "h",
       "title": "L1 batch seal stage $state_keeper_seal_l1_batch_stages",
       "type": "row"
     },
@@ -7001,7 +6799,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 108
+            "y": 741
           },
           "id": 14894,
           "options": {
@@ -7145,7 +6943,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 108
+            "y": 741
           },
           "id": 14895,
           "options": {
@@ -7290,7 +7088,7 @@
             "h": 8,
             "w": 8,
             "x": 0,
-            "y": 116
+            "y": 749
           },
           "id": 14949,
           "options": {
@@ -7434,7 +7232,7 @@
             "h": 8,
             "w": 8,
             "x": 8,
-            "y": 116
+            "y": 749
           },
           "id": 14951,
           "options": {
@@ -7578,7 +7376,7 @@
             "h": 8,
             "w": 8,
             "x": 16,
-            "y": 116
+            "y": 749
           },
           "id": 14950,
           "options": {
@@ -7723,7 +7521,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 124
+            "y": 757
           },
           "id": 14893,
           "options": {
@@ -7868,7 +7666,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 124
+            "y": 757
           },
           "id": 14892,
           "options": {
@@ -8013,7 +7811,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 132
+            "y": 765
           },
           "id": 15060,
           "options": {
@@ -8158,7 +7956,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 132
+            "y": 765
           },
           "id": 15061,
           "options": {
@@ -8219,9 +8017,9 @@
       "type": "row"
     }
   ],
+  "preload": false,
   "refresh": "",
-  "revision": 1,
-  "schemaVersion": 39,
+  "schemaVersion": 40,
   "tags": [
     "Era-Main"
   ],
@@ -8229,37 +8027,28 @@
     "list": [
       {
         "current": {
-          "selected": false,
           "text": "Prometheus",
-          "value": "PBFA97CFB590B2093"
+          "value": "prometheus"
         },
-        "hide": 0,
         "includeAll": false,
-        "multi": false,
         "name": "datasource",
         "options": [],
         "query": "prometheus",
-        "queryValue": "",
         "refresh": 1,
         "regex": "^(?!prometheus-1$|prometheus$|vm-mainnet$|vm-gpu-sandbox$|vm-testnets$|vm-infra$|vm-infra-staging$|default$).*",
-        "skipUrlSync": false,
         "type": "datasource"
       },
       {
         "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
+          "text": "via",
+          "value": "via"
         },
         "datasource": {
           "type": "prometheus",
           "uid": "${datasource}"
         },
         "definition": "label_values(server_processed_txs{stage=~\"state_keeper\"},namespace)",
-        "hide": 0,
         "includeAll": false,
-        "multi": false,
         "name": "namespace",
         "options": [],
         "query": {
@@ -8268,13 +8057,10 @@
         },
         "refresh": 2,
         "regex": "^(?!snapshot_recovery_test$).*",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       },
       {
         "current": {
-          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -8285,8 +8071,6 @@
         "definition": "label_values(via_server_state_keeper_l1_batch_sealed_time_stage_count, stage)",
         "hide": 2,
         "includeAll": true,
-        "label": "",
-        "multi": false,
         "name": "state_keeper_seal_l1_batch_stages",
         "options": [],
         "query": {
@@ -8295,13 +8079,10 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       },
       {
         "current": {
-          "selected": true,
           "text": [
             "All"
           ],
@@ -8314,9 +8095,7 @@
           "uid": "${datasource}"
         },
         "definition": "label_values(via_server_state_keeper_miniblock_sealed_time_stage_count, stage)",
-        "hide": 0,
         "includeAll": true,
-        "label": "",
         "multi": true,
         "name": "state_keeper_seal_miniblock_stages",
         "options": [],
@@ -8326,21 +8105,16 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       },
       {
         "current": {
-          "selected": false,
           "text": "$__interval",
           "value": "$__interval"
         },
         "description": "If set to $__interval, no rolling average is applied. Other values are useful to analyse historical data",
-        "hide": 0,
         "includeAll": false,
         "label": "aggregate by",
-        "multi": false,
         "name": "aggr",
         "options": [
           {
@@ -8365,13 +8139,10 @@
           }
         ],
         "query": "$__interval,1h,1d,1w",
-        "queryValue": "",
-        "skipUrlSync": false,
         "type": "custom"
       },
       {
         "current": {
-          "selected": true,
           "text": [
             "All"
           ],
@@ -8384,7 +8155,6 @@
           "uid": "${datasource}"
         },
         "definition": "label_values(server_processed_txs{stage=~\"state_keeper\",namespace=\"$namespace\"},pod)",
-        "hide": 0,
         "includeAll": true,
         "multi": true,
         "name": "pod",
@@ -8395,8 +8165,6 @@
         },
         "refresh": 2,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       }
     ]
@@ -8405,7 +8173,6 @@
     "from": "now-1h",
     "to": "now"
   },
-  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {},
   "timezone": "",
   "title": "Era - sequencer",
