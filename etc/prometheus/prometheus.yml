@@ -36,6 +36,8 @@ scrape_configs:
     honor_labels: true
     static_configs:
       - targets: ['host.docker.internal:3316']
+        labels:
+          container: 'Coordinator'
     metrics_path: '/'
 
   - job_name: 'Verifier'
@@ -43,6 +45,8 @@ scrape_configs:
     honor_labels: true
     static_configs:
       - targets: ['host.docker.internal:3314']
+        labels:
+          container: 'verifier'
     metrics_path: '/'
 
   # - job_name: 'zksync_contract_verifier'
