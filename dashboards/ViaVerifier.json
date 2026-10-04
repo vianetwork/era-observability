@@ -79,7 +79,7 @@
                 "type": "prometheus",
                 "uid": "${datasource}"
             },
-            "description": "Errors thrown in Via layers",
+            "description": "Layer errors and verifier no-verdict polling attempts by reason. Repeated attempts may refer to the same batch; missing verifier counters are unavailable or not yet created, not proof of healthy zero.",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -146,9 +146,9 @@
             "options": {
                 "legend": {
                     "calcs": [],
-                    "displayMode": "hidden",
+                    "displayMode": "list",
                     "placement": "right",
-                    "showLegend": false
+                    "showLegend": true
                 },
                 "tooltip": {
                     "maxHeight": 600,
@@ -159,14 +159,21 @@
             "pluginVersion": "11.3.0",
             "targets": [
                 {
+                    "datasource": {"type": "prometheus", "uid": "${datasource}"},
+                    "expr": "increase(via_verifier_zk_non_verdicts{namespace=\"$namespace\"}[$__rate_interval])",
+                    "legendFormat": "No verdict: {{reason}} · {{instance}}",
+                    "range": true,
+                    "refId": "G"
+                },
+                {
                     "datasource": {
                         "type": "prometheus",
                         "uid": "${datasource}"
                     },
                     "editorMode": "code",
-                    "expr": "increase(via_verifier_zk_errors{namespace=\"$namespace\"}[1m]) OR on() vector(0)",
+                    "expr": "increase(via_verifier_zk_errors{namespace=\"$namespace\"}[$__rate_interval])",
                     "hide": false,
-                    "legendFormat": "via_verifier_zk_errors",
+                    "legendFormat": "Verifier errors",
                     "range": true,
                     "refId": "A"
                 },
@@ -236,7 +243,7 @@
                     "refId": "F"
                 }
             ],
-            "title": "Errors",
+            "title": "Errors and no-verdict attempts",
             "type": "timeseries"
         },
         {
@@ -1293,6 +1300,7 @@
             "type": "timeseries"
         },
         {
+            "description": "Database maxima refreshed on verifier polls, not contiguous clearance or proof truth. Indexed candidates exclude finalized rejection rows; recorded approvals include development and historical approvals. A persistent indexed/approved gap indicates pending work. Equal or zero values do not clear historical rejected rows. Missing series is unavailable, not healthy zero; check scrape freshness and verifier logs separately.",
             "datasource": {
                 "type": "prometheus",
                 "uid": "${datasource}"
@@ -1300,22 +1308,10 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
-                        "mode": "thresholds"
+                        "mode": "fixed",
+                        "fixedColor": "#7A8491"
                     },
-                    "mappings": [],
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
+                    "mappings": []
                 },
                 "overrides": []
             },
@@ -1346,6 +1342,14 @@
             "pluginVersion": "11.0.0",
             "targets": [
                 {
+                    "datasource": {"type": "prometheus", "uid": "${datasource}"},
+                    "expr": "via_verifier_zk_dev_accepted_batches{container=\"$namespace\"}",
+                    "instant": true,
+                    "range": false,
+                    "legendFormat": "Development approvals since restart · {{instance}}",
+                    "refId": "C"
+                },
+                {
                     "datasource": {
                         "type": "prometheus",
                         "uid": "${datasource}"
@@ -1355,7 +1359,7 @@
                     "expr": "via_verifier_zk_last_valid_l1_batch{container=\"$namespace\"}",
                     "format": "heatmap",
                     "instant": true,
-                    "legendFormat": "Valid L1 Batch Number",
+                    "legendFormat": "Highest recorded approval · {{instance}}",
                     "range": false,
                     "refId": "A"
                 },
@@ -1366,15 +1370,15 @@
                     },
                     "editorMode": "code",
                     "exemplar": false,
-                    "expr": "via_verifier_zk_last_invalid_l1_batch{container=\"$namespace\"}",
+                    "expr": "via_verifier_zk_last_indexed_l1_batch{container=\"$namespace\"}",
                     "format": "heatmap",
                     "instant": true,
-                    "legendFormat": "Invalid L1 Batch Number",
+                    "legendFormat": "Highest indexed canonical candidate · {{instance}}",
                     "range": false,
                     "refId": "B"
                 }
             ],
-            "title": "L1 batch status (Valid/Invalid)",
+            "title": "L1 batch database watermarks",
             "type": "stat"
         },
         {
